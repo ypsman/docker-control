@@ -1,2 +1,2 @@
 # docker-control
-Scripts for Controlling Docker Container
+scripts for Controlling Docker Container
