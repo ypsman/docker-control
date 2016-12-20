@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 #
 # author: Yves Sanderbrand <yvessander@gmail.com>
 #
@@ -56,7 +56,7 @@ function outputter() {
 }
 
 function backup() {
-  echo "Write youre Backup in this Function"
+  #echo "Write youre Backup in this Function"
 }
 
 function print_usage {
