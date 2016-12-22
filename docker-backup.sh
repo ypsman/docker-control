@@ -8,7 +8,7 @@ set -e
 # Set Variables
 BACKUPDATE=$(date '+%Y%m%d')
 BACKUPHOST=$(hostname)
-BACKUPDIR=$(pwd)
+BACKUPDIR="/backup"
 # init var for input
 CONTAINER_NAME=$1
 
@@ -38,6 +38,11 @@ function backup() {
     debian:8.6 \
     tar cfp /backup/$BACKUPNAME.tar -C / $VOL
     unset VOL
+    postbackup
+}
+
+function postbackup() {
+    /usr/local/sbin/s3backup.sh $CONTAINER_NAME $BACKUPDIR/$BACKUPNAME.tar 
 }
 
 function print_usage {
